@@ -23,13 +23,14 @@ Route::group(['prefix' => '/painel', 'middleware' => 'auth'], function () {
 /* --------------------------------------------------- */
 /* Rotas Públicas
 /* --------------------------------------------------- */
+Route::get('/generos/{id}/{genero}', 'GenerosController@index')->name('obras-genero');
 
-Route::get('/obras', function(){
-    $obras = \Obra::orderBy('created_at')->paginate();
+Route::get('/obras/{id}/{titulo}', 'ObrasController@index')->name('obra');
 
-    return view('obras')->with(['obras' => $obras]);
-});
+Route::resource('/series', 'SeriesController');
 
+Route::resource('/filmes', 'FilmesController');
+   
 Auth::routes();
 
 Route::get('/logout', function () {
@@ -39,8 +40,4 @@ Route::get('/logout', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    $obras = App\Models\Obra::orderBy('created_at', 'DESC')->paginate();
-
-    return view('index')->with(['obras' => $obras]);
-});
+Route::get('/', 'IndexController@index')->name('inicio');

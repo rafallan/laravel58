@@ -2,6 +2,13 @@
 
 @section('conteudo')
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb text-light bg-dark">
+        <li class="breadcrumb-item"><a href="{{ route('inicio') }}">Início</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Séries</li>
+    </ol>
+</nav>
+
 <h3>Séries</h3>
 <div class="row">
     @foreach ($series as $serie)

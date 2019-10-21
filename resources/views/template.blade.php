@@ -14,6 +14,8 @@
 	<title>Curso de Laravel </title>
 	<link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
+	<link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
+
 	<style>
 		a{
 			color: red;
@@ -31,6 +33,12 @@
 		@yield('conteudo')
 
 	</div>
+
+	<footer class="footer mt-auto py-3">
+    	<div class="container">
+        	<span class="text-muted">&copy; Minicurso de Laravel 5.8 - Todos os direitos reservados.</span>
+      	</div>
+    </footer>
 
 
 	<!-- Optional JavaScript -->
